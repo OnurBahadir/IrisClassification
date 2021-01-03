@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iris Prediction</title>
+    <script src="static/main.js"></script>
+    <style>
+        h1{color: tomato;}
+    </style>
+</head>
+<body>
+    <form name="irisForm" action="/" method="post"  onsubmit="return validateForm()">
+            <label for="sLen">Sepal Length (cm) </label>
+            <input name="sLen" type="number" min=0 step=0.1 id="sLen"  ><br>
+
+            <label for="sWid">Sepal Width (cm) </label>
+            <input name="sWid" type="number" min=0 step=0.1  id="sWid" ><br>
+
+            <label for="pLen">Petal Length (cm) </label>
+            <input name="pLen" type="number" min=0 step=0.1  id="pLen"  ><br>
+
+            <label for="pWid">Petal Width (cm) </label>
+            <input name="pWid" type="number" min=0 step=0.1  id="pWid" ><br>
+            <button type="submit" >Predict </button><br>
+        </form>
+
+    {% if y==1 %}
+        <h1 >{{" [ "+ sLen+" "+sWid +" "+pLen+" "+ pWid +" ]  = "}} Iris-setosa </h1>
+    {% elif y==2 %}
+        <h1 >{{" [ "+ sLen+" "+sWid +" "+pLen+" "+ pWid +" ]  = "}} Iris-versicolor </h1>
+    {% elif y==3 %}
+        <h1 >{{" [ "+ sLen+" "+sWid +" "+pLen+" "+ pWid +" ]  = "}} Iris-virginica </h1>
+    {% elif y==4 %}
+        <h1></h1>
+    {% endif %} 
+
+</body>
+</html>
